@@ -26,6 +26,8 @@ while True:
     print("Amount per person:", amount_per_person)
     while True:
         again = input("Calculat again: yes/no").lower()
-        if again == "no":
+        if again != "yes":
+            print("Bye")
             break
+        
 
