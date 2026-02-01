@@ -1,22 +1,34 @@
 while True:
-    bill_amount = float(input("enter_bill_amount:"))
-    if bill_amount >= 1:
-        print(bill_amount)
-    else:
+    while True:
+        try:
+            bill_amount = float(input("Enter bill amount: "))
+        except ValueError:
+            print("Please enter a number.")
+            continue
+        if bill_amount >= 1:
+            break
         print("Invalid input. Retry")
-        continue
-    tip_percent = float(input("Enter tip (%):"))
-    if tip_percent >= 1:
-        print(tip_percent)
-    else:
+
+    while True:
+        try:
+            tip_percent = float(input("Enter tip (%): "))
+        except ValueError:
+            print("Please enter a number.")
+            continue
+        if tip_percent >= 0:
+            break
         print("Invalid input. Retry")
-        continue
-    people_count = int(input("Enter number of people:"))
-    if people_count >=1:
-        print(people_count)
-    else:
+
+    while True:
+        try:
+            people_count = int(input("Enter number of people: "))
+        except ValueError:
+            print("Please enter an integer.")
+            continue
+        if people_count >= 1:
+            break
         print("Invalid input. Retry")
-        continue
+        
     tip = bill_amount * (tip_percent / 100)
     total = bill_amount + tip
     amount_per_person = total / people_count
