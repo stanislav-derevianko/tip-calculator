@@ -16,6 +16,7 @@ while True:
         print(people_count)
     else:
         print("Invalid input. Retry")
+        continue
     tip = bill_amount * (tip_percent / 100)
     total = bill_amount + tip
     amount_per_person = total / people_count
